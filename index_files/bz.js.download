@@ -1,0 +1,47 @@
+function bzGetFlashPlayerBZDA97F334194A480DBE9D() {
+	var div = document.getElementById('SWBZDA97F334194A480DBE9D');
+	if (div) {
+		div.innerHTML = '<div id="showBZDA97F334194A480DBE9D" class="slideshow"><img src="'+_urlBZDA97F334194A480DBE9D+'slideshow/images/HTML-7D3C3F8E-4CF4-4FA6-8D4B.jpg" alt="2" /></div>';
+		var data = {
+			'HTML-7D3C3F8E-4CF4-4FA6-8D4B.jpg#2013-03-21T12:40:11': { caption: '2', date: 'Jan 17, 2013' },'HTML-66CEE539-B57F-452C-8A0C.jpg#2013-03-21T12:40:11': { caption: '3', date: 'Jan 17, 2013' },'HTML-6D6899B6-7020-4BFC-AF24.jpg#2013-03-21T12:40:11': { caption: '4', date: 'Nov 4, 2005' },'HTML-15949A9D-DD9C-450A-BA9C.jpg#2013-03-21T12:40:11': { caption: '5', date: 'Jan 17, 2013' },'HTML-4F37D516-B2A3-4871-95CC.jpg#2013-03-21T12:40:11': { caption: '6', date: 'Sep 30, 2002' },'HTML-36117B3E-B736-4D4F-88DA.jpg#2013-03-21T12:40:11': { caption: '7', date: 'Jan 17, 2013' },'HTML-00081D34-0157-450E-9740.jpg#2013-03-21T12:40:11': { caption: '8', date: 'Sep 9, 2011' },'HTML-AD9A3B0E-A5A7-479F-A12D.jpg#2013-03-21T12:40:11': { caption: '9', date: 'Mar 25, 2009' },'HTML-82F1BA01-9918-480F-AFF2.jpg#2013-03-21T12:40:11': { caption: '10', date: 'Jan 17, 2013' },'HTML-D5C0C11F-78E7-4F25-9D27.jpg#2013-03-21T12:40:11': { caption: '11', date: 'Jan 29, 2011' },'HTML-447248E9-0647-4DFA-9FAF.jpg#2013-03-21T12:40:11': { caption: '12', date: 'Jan 17, 2013' },'HTML-E69C25FE-14BB-4A3C-B43B.jpg#2013-03-21T12:40:11': { caption: '13', date: 'Sep 30, 2002' },'HTML-1C38CEE5-4017-4827-BD0C.jpg#2013-03-21T12:40:11': { caption: '14', date: 'Jan 17, 2013' },'HTML-DF6C5EA4-582E-4B3D-939C.jpg#2013-03-21T12:40:11': { caption: '15', date: 'Sep 30, 2002' }
+		};
+		if (typeof Slideshow != "undefined") {
+			var myHu = _urlBZDA97F334194A480DBE9D+'slideshow/images/';
+			var myLoader = {'animate': [_urlBZDA97F334194A480DBE9D+'slideshow/css/loader-#.png', 12]};
+			var myShow = new Slideshow('showBZDA97F334194A480DBE9D',data, {controller: false, width: 643, height: 425, thumbnails: false, hu: myHu, loader: myLoader});
+		} else {
+			alert("Slideshow not loaded");
+		}
+	} else {
+		alert("no SWBZDA97F334194A480DBE9D div");
+	}
+}
+function checkLocalWarning() {
+	if (typeof checkLocalWarningFlag != "undefined") {
+		var path = _urlBZDA97F334194A480DBE9D.substring(0,8);
+		if (path.match('file:\/\/')) {
+			var element = document.getElementById('local-warning');
+			element.style.display = '';
+		}
+	}
+}
+function bzEmbedSWFBZDA97F334194A480DBE9D() {
+	var flashBannerBZDA97F334194A480DBE9D = true;
+	if (flashBannerBZDA97F334194A480DBE9D && swfobject.hasFlashPlayerVersion(requiredFlashPlayerVersion)) {
+		var flashvars = {
+			xmlPath: _urlBZDA97F334194A480DBE9D + "bz.xml",
+			imgPath: _urlBZDA97F334194A480DBE9D + "img",
+			soundPath: false,
+			themeMode: "2"
+		};
+		var params = {
+			wmode: "transparent",
+			allowscriptaccess: "always"
+		};
+		var attributes = {};
+		swfobject.embedSWF(_urlBZDA97F334194A480DBE9D + "bzAnimation.swf", "SWBZDA97F334194A480DBE9D", "643", "425", requiredFlashPlayerVersion, false, flashvars, params, attributes);
+		swfobject.addDomLoadEvent(checkLocalWarning);
+	} else {
+		swfobject.addDomLoadEvent(bzGetFlashPlayerBZDA97F334194A480DBE9D);
+	}
+}
